@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:rolling_dice/Services/databaseService.dart';
 
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth;
@@ -26,7 +27,9 @@ class AuthenticationService {
     try {
       UserCredential result = await _firebaseAuth
           .createUserWithEmailAndPassword(email: email, password: password);
-
+      var firebaseUser = FirebaseAuth.instance.currentUser;
+      DatabaseService.uid = firebaseUser!.uid;
+      await DatabaseService.updateUserData(email, name);
       return "Signed up";
     } on FirebaseAuthException catch (e) {
       return e.message;

@@ -2,14 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:rolling_dice/Presentation/leaderBoard.dart';
 import 'package:rolling_dice/Presentation/Login/login.dart';
 
 import 'Application/authentication.dart';
-
+import 'Presentation/home.dart';
 import 'Presentation/Signup/signup.dart';
 import 'Presentation/Splash/authenticate.dart';
 import 'Presentation/Splash/splash.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,8 +29,7 @@ class MyApp extends StatelessWidget {
         ),
         // 3
         StreamProvider(
-          create: (context) =>
-              context.read<AuthenticationService>().authStateChanges,
+          create: (context) => context.read<AuthenticationService>().authStateChanges,
           initialData: null,
         )
       ],
@@ -47,6 +47,8 @@ class MyApp extends StatelessWidget {
           '/auth': (context) => AuthenticationWrapper(),
           '/signin': (context) => LoginScreen(),
           '/signup': (context) => SignUpScreen(),
+          '/home': (context) => Home(),
+          '/lead': (context) => LeaderBoard(),
         },
       ),
     );
