@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "260749946992",
+    "project_id": "rollingdice-31937",
+    "storage_bucket": "rollingdice-31937.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260749946992:android:35b2936e2de201834044b5",
+        "android_client_info": {
+          "package_name": "com.example.rolling_dice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260749946992-k9hk8k0r6n4p8obs3tlqr9inp0f5hrjj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI10Ktl3Dy3DrJFV0R1rvIBtpoLOfge6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260749946992-k9hk8k0r6n4p8obs3tlqr9inp0f5hrjj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
