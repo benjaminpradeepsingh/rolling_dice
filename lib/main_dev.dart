@@ -7,6 +7,7 @@ import 'myApp.dart';
 
 Future<void> main() async {
   FlavorConfig(
+    name: "DEVELOP",
     color: Colors.red,
     location: BannerLocation.bottomStart,
 

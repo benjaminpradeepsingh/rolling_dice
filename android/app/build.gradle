@@ -27,6 +27,18 @@ apply plugin: 'com.google.gms.google-services'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    flavorDimensions "rolling_dice"
+
+    productFlavors {
+        dev {
+            dimension "rolling_dice"
+            resValue "string", "app_name", "Dev App"
+        }
+        prod {
+            dimension "rolling_dice"
+            resValue "string", "app_name", "Prod App"
+        }
+    }
     compileSdkVersion 30
 
     sourceSets {
@@ -34,12 +46,15 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+
         applicationId "com.example.rolling_dice"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+    lintOptions {
+        checkReleaseBuilds false
     }
 
     buildTypes {
